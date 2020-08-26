@@ -1,0 +1,24 @@
+.Menu {
+  margin-top: 20px;
+}
+
+.Menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: lightgreen;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  justify-content: space-between;
+  display: flex;
+  overflow: hidden;
+}
+
+.Menu li {
+  display: inline-block;
+  
+}
+
+.active {
+  background-color: rgb(238, 144, 238);
+}
