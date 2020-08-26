@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "HlebaSoliZiamliVoli";
+  src: url("/assets/fonts/HlebaSoliZiamliVoli.otf"), format('opentype')
+}
+
+.App {
+  
+  width: fit-content;
+  background-color: lightskyblue;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid;
+  font-family: HlebaSoliZiamliVoli;
+}
