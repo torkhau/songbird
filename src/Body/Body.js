@@ -2,12 +2,13 @@ import React, { Component} from "react";
 import classes from "./Body.css";
 import Container from "../components/Container/Container";
 import Button from "../components/Button/Button";
+import Audio from "../components/Audio/Audio"
 
 const Body = props => {
   return (
     <div className={classes.Body}>
         <Container className = {'border'}>
-          Тут рандомный вопрос
+          <Audio />
         </Container>
         <Container className = {'flex'}>
           <Container className = {'border half_field'}>

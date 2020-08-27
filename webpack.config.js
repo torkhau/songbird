@@ -32,11 +32,6 @@ module.exports = {
             }
           }
         ],
-      },
-      {
-        test: /\.otf$/,
-        loader: "file-loader",
-        options: { name: "./assets/fonts/[name].[ext]" }
       }
     ]
   },
