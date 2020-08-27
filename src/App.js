@@ -21,8 +21,8 @@ class App extends Component {
     return(
       <div className={classes.App}>
         <Header score = {this.state.score} level = {this.state.lavel}/>
-        <Body />
-        <Footer onClick = {this.nextLevelClickHandler}/>
+        <Body onClick = {this.nextLevelClickHandler}/>
+        <Footer />
       </div>
     );
   }

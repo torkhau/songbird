@@ -4,9 +4,10 @@ import classes from "./Button.css";
 const Button = props => {
   return (
     <button
-    // disabled = {props.disabled}
+    className = {classes.Button}
+    // disabled = {false}
     onClick = {props.onClick}>
-      Кнопка
+      Наступны вапрос
     </button>
   )
 }

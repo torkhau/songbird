@@ -14,3 +14,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+.half_field {
+  width: 50%;
+}
+
+.button_container {
+  text-align: center;
+}

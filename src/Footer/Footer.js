@@ -1,11 +1,10 @@
 import React, { Component} from "react";
 import classes from "./Footer.css";
-import Button from "../components/Button/Button"
 
 const Footer = props => {
   return (
     <div className={classes.Footer}>
-        <Button onClick = {props.onClick}/>
+        &#169; Torkhau
     </div>
   )
 }
