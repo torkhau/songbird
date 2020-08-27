@@ -5,6 +5,7 @@
 .Menu ul {
   list-style: none;
   padding: 0;
+  margin: 10px;
   background-color: lightgreen;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -18,6 +19,7 @@
 .Menu li {
   flex: auto;
   text-align: center;
+  padding: 10px;
 }
 
 .active {

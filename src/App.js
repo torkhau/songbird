@@ -1,4 +1,4 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import classes from "./App.css";
 import Header from "./Header/Header";
 import Body from "./Body/Body";
