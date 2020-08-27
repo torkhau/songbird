@@ -1,0 +1,16 @@
+body {
+  background-color: #73C2FF;
+}
+
+@media (min-width: 1200px){
+  .container {
+    max-width: 1140px;
+  }
+}
+.container {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
