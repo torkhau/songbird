@@ -1,24 +1,15 @@
 import React, { Component} from "react";
 import classes from "./Menu.css";
 
-const menuItems = [
-  'Хатнiя',
-  'Лясныя',
-  'Драпежныя',
-  'Вадаплаўныя',
-  'З Чырвонай кнігі',
-  'Рэдкія'
-]
-
 class Menu extends Component {
 
   renderListItems = () => {
-    return menuItems.map((item, index) => {
+    return this.props.menu.map((item, index) => {
       return (
       <li 
-      key = {index}
-      className = {this.props.lavel === index ? classes.active : ''}>
-        {item}
+        key = {index}
+        className = {this.props.lavel === index ? classes.active : ''}>
+        {item[0]}
       </li>
       )
     })

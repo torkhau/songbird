@@ -5,9 +5,9 @@ const Button = props => {
   return (
     <button
     className = {classes.Button}
-    // disabled = {false}
+    disabled = {props.btnDisabled}
     onClick = {props.onClick}>
-      Наступны вапрос
+      Наступнае пытанне
     </button>
   )
 }

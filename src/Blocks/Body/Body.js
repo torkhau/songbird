@@ -8,7 +8,7 @@ const QuestionBlock = props => {
   let child = <Loader />;
   let cls = classes.section_center;
   if (!props.loading) {
-    child = <Question src = {props.src}/>
+    child = <Question src = {props.src} song = {props.song}/>
     cls = classes.section_normal;
   };
   return (
@@ -19,25 +19,29 @@ const QuestionBlock = props => {
 }
 
 const Body = props => {
+  
   let src = '';
+  let song = '';
   if (props.trueAnswer > -1) {
-    src = props.data[props.trueAnswer].img;
+    const e = props.data[props.trueAnswer];
+    src = e.img;
+    song = e.song
   };
 
   return (
-    <div className={classes.Body}>
-        <QuestionBlock loading = {props.loading} src = {src}/>
-        <section>
-          <div className = {classes.wrapper}>
-            <Loader />
-          </div>
-          <div className = {classes.wrapper}>
-            Тут тот ответ, который выбрали
-          </div>
-        </section>
-        <div className = {classes.btn_wrapper}>
-          <Button onClick = {props.onClick} btnDisabled = {props.btnDisabled}/>
+    <div className = {classes.Body}>
+      <QuestionBlock loading = {props.loading} src = {src} song = {song}/>
+      <section>
+        <div className = {classes.wrapper}>
+          <Loader />
         </div>
+        <div className = {classes.wrapper}>
+          Тут тот ответ, который выбрали
+        </div>
+      </section>
+      <div className = {classes.btn_wrapper}>
+        <Button onClick = {props.onClick} btnDisabled = {props.btnDisabled}/>
+      </div>
     </div>
   )
 }

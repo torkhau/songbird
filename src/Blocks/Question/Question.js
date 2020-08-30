@@ -12,7 +12,7 @@ const Question = (props) => {
       <div className = {classes.block_discription}>
         <p>А тут название птицы</p>
         <hr/>
-        <Audio />
+        <Audio song = {props.song}/>
       </div>
     </div>
   )

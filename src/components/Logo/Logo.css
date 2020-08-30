@@ -1,0 +1,9 @@
+.Logo {
+  margin: 0;
+  font-family: 'Marck Script', cursive, 'Balsamiq Sans', cursive, 'Pacifico', cursive;
+  font-size: 70px;
+}
+
+.Logo span {
+  color: red;
+}
