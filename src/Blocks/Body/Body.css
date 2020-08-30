@@ -1,0 +1,44 @@
+.Body {
+  margin-bottom: 10px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.Body section {
+  border: 1px solid white;
+  display: flex;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.Body div.btn_wrapper {
+  text-align: center;
+  margin: 10px;
+}
+
+.Body div.wrapper {
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  align-items: center;
+}
+
+.Body div.question {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-end;
+}
+
+.section_center {
+  justify-content: center;
+}
+
+.section_normal {
+  justify-content: space-between;
+}

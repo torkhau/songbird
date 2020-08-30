@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Lobster&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
 
 .App {
-  margin: 0 auto;
   font-family: 'Lobster', cursive, 'Balsamiq Sans', cursive, 'Pacifico', cursive;
+  margin: 0 auto;
+  background-color: rgba(95, 77, 77, 0.8);
+  border-radius: 5px;
+  color: white;
 }

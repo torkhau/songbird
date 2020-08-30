@@ -1,8 +1,8 @@
 import React, { Component} from "react";
 import classes from "./Header.css";
-import Logo from "../components/Logo/Logo"
-import Score from "../components/Score/Score"
-import Menu from "../components/Menu/Menu"
+import Logo from "../../components/Logo/Logo"
+import Score from "../../components/Score/Score"
+import Menu from "../../components/Menu/Menu"
 
 const Header = props => {
   return (
@@ -11,7 +11,7 @@ const Header = props => {
         <Logo />
         <Score score = {props.score}/>
       </div>
-      <Menu lavel = {props.level}/>
+      <Menu lavel = {props.level} menu = {props.menu}/>
     </div>
   )
 }
