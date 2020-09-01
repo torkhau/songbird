@@ -52,7 +52,7 @@ class Answers extends Component {
         <li key = {index}
             className = {this.addClassName(index)}
             onClick = {() => this.onClick(index)}>
-          { item.Name } {this.trueAnswer}
+          { item.Name }
         </li>
       )
     )
