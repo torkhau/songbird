@@ -7,6 +7,18 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.mp3$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              // outputPath: 'fonts/'
+            }
+          }
+        ]
+      },
+      {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {

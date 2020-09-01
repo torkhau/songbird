@@ -6,13 +6,14 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.Body section {
+.Body div.sections {
   border: 1px solid white;
   display: flex;
   margin: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  /* flex-wrap: wrap; */
 }
 
 .Body div.btn_wrapper {
@@ -21,7 +22,6 @@
 }
 
 .Body div.wrapper {
-  width: 50%;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin: 10px;
@@ -35,10 +35,23 @@
   align-content: flex-end;
 }
 
-.section_center {
+.div_center {
   justify-content: center;
 }
 
-.section_normal {
+.div_normal {
   justify-content: space-between;
+}
+
+@media (min-width: 768px){
+  .width50 {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 570px){
+  .section_normal {
+    flex-direction: column;
+  }
 }
