@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./Body.css";
+import classes from "./Body.module.css";
 import Button from "../../components/Button/Button";
 import Loader from "../../components/Loader/Loader";
 import Question from "../Question/Question";

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import classes from "./Audio.css"
+import classes from "./Audio.module.css"
 
 class Audio extends Component {
   constructor(props){

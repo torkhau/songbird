@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import classes from './Answers.css';
-import win from '../../../public/sound/win.mp3';
-import fall from '../../../public/sound/fall.mp3';
+import classes from './Answers.module.css';
+import win from '../../assets/sound/win.mp3';
+import fall from '../../assets/sound/fall.mp3';
 
 class Answers extends Component {
   constructor(props) {
@@ -11,10 +11,12 @@ class Answers extends Component {
   
   componentDidMount() {
     this.win = document.getElementById('win');
+    this.win.volume = 0.4;
     this.fall = document.getElementById('fall');
+    this.fall.volume = 0.4;
   }
 
-  onClick = (e, index) => {
+  onClick = (index) => {
     let type = 0;
     if (!this.isFind) {
       if (this.trueAnswer === index) {
@@ -49,8 +51,8 @@ class Answers extends Component {
     return this.data.map((item, index) => (
         <li key = {index}
             className = {this.addClassName(index)}
-            onClick = {(e) => this.onClick(e, index)}>
-          { item.Name }
+            onClick = {() => this.onClick(index)}>
+          { item.Name } {this.trueAnswer}
         </li>
       )
     )
@@ -58,7 +60,10 @@ class Answers extends Component {
 
   render() {
     this.data = this.props.data;
-    this.trueAnswer = this.props.trueAnswer; 
+    this.trueAnswer = this.props.trueAnswer;
+    if (this.props.labels.reduce((summ, item) => summ + item) === 0) {
+      this.isFind = false;
+    } 
     return (
       <div className = {classes.Answers}>
         <audio id = 'win' src = {win} hidden></audio>

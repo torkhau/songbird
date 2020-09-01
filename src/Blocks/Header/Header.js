@@ -1,5 +1,5 @@
-import React, { Component} from "react";
-import classes from "./Header.css";
+import React from "react";
+import classes from "./Header.module.css";
 import Logo from "../../components/Logo/Logo"
 import Score from "../../components/Score/Score"
 import Menu from "../../components/Menu/Menu"

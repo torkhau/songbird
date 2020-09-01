@@ -1,8 +1,8 @@
 import React from 'react';
-import classes from './Question.css';
+import classes from './Question.module.css';
 import Img from "../../components/Img/img"
 import Audio from "../../components/Audio/Audio";
-import emptyBerd from "../../../public/images/emptybird.jpg";
+import emptyBerd from "../../assets/images/emptybird.jpg";
 
 const Question = props => {
   const srcImg = props.win ? props.data.img : emptyBerd;

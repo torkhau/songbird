@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import classes from './App.css';
+import React, {Component} from 'react';
+import classes from './App.module.css';
 import Header from './Blocks/Header/Header';
 import Question from './Blocks/Question/Question';
 import Footer from './Blocks/Footer/Footer';
@@ -70,6 +70,7 @@ class App extends Component {
   }
 
   onClickAnswer = (index, type) => {
+    this.setState({ indexAnswer: index });
     if (this.state.win) return;
     if (this.trueAnswer === index) {
       this.setState( preState => ({

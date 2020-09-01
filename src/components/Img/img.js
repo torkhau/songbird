@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './img.css';
+import classes from './img.module.css';
 
-const Img = props => <img className = {classes.Img} src = {props.src}/>
+const Img = props => <img alt = 'Oops' className = {classes.Img} src = {props.src} />
 
 export default Img;
