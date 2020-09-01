@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/songbird/static/css/main.8960a983.chunk.css",
+    "main.js": "/songbird/static/js/main.a413b9db.chunk.js",
+    "main.js.map": "/songbird/static/js/main.a413b9db.chunk.js.map",
+    "runtime-main.js": "/songbird/static/js/runtime-main.710c5ffc.js",
+    "runtime-main.js.map": "/songbird/static/js/runtime-main.710c5ffc.js.map",
+    "static/js/2.490980b7.chunk.js": "/songbird/static/js/2.490980b7.chunk.js",
+    "static/js/2.490980b7.chunk.js.map": "/songbird/static/js/2.490980b7.chunk.js.map",
+    "index.html": "/songbird/index.html",
+    "precache-manifest.066261771b9106526c78e7944bc733fc.js": "/songbird/precache-manifest.066261771b9106526c78e7944bc733fc.js",
+    "service-worker.js": "/songbird/service-worker.js",
+    "static/css/main.8960a983.chunk.css.map": "/songbird/static/css/main.8960a983.chunk.css.map",
+    "static/js/2.490980b7.chunk.js.LICENSE.txt": "/songbird/static/js/2.490980b7.chunk.js.LICENSE.txt",
+    "static/media/emptybird.jpg": "/songbird/static/media/emptybird.06a46938.jpg",
+    "static/media/fall.mp3": "/songbird/static/media/fall.0d551de3.mp3",
+    "static/media/Audio.module.css": "/songbird/static/media/icomoon.fd3df2d9.eot",
+    "static/media/win.mp3": "/songbird/static/media/win.4ea89a5f.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.710c5ffc.js",
+    "static/js/2.490980b7.chunk.js",
+    "static/css/main.8960a983.chunk.css",
+    "static/js/main.a413b9db.chunk.js"
+  ]
+}
