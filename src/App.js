@@ -86,8 +86,8 @@ class App extends Component {
       this.setState( preState => ({
         labels: preState.labels.map((item, i) => index === i ? type : item)
       })
-    )
-  }
+      )
+    }
   }
 
   render() {
@@ -121,17 +121,6 @@ class App extends Component {
               <Button onClick = {this.nextLevelClickHandler} btnDisabled = {btnDisabled}/>
             </div>
           </div>
-          {/* <Body 
-            onButtonClick = {this.nextLevelClickHandler}
-            btnDisabled = {this.state.btnDisabled}
-            level = {this.state.level}
-            trueAnswer = {this.trueAnswer}
-            data = {this.data}
-            loading = {this.state.loading}
-            srcImg = {this.state.srcImg}
-            nameBird = {this.state.nameBird}
-            onLiClick = {this.onClickAnswer}
-            /> */}
           <Footer />
       </div>
       );
