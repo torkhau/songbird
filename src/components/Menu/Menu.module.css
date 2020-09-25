@@ -1,0 +1,27 @@
+.Menu {
+  margin-top: 20px;
+}
+
+.Menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px;
+  background-color: rgb(255, 115, 115);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: flex;
+  flex: auto;
+  overflow: hidden;
+}
+
+.Menu li {
+  flex: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.active {
+  background-color: rgb(255, 0, 0);
+}

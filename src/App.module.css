@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Lobster&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+
+.App {
+  font-family: 'Lobster', cursive, 'Balsamiq Sans', cursive, 'Pacifico', cursive;
+  margin: 0 auto;
+  background-color: rgba(95, 77, 77, 0.8);
+  border-radius: 5px;
+  color: white;
+}
+
+.loader {
+  background-color: rgba(95, 77, 77, 0.8);
+  border-radius: 5px;
+  margin: 50 auto;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.Body {
+  margin-bottom: 10px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.section {
+  border: 1px solid white;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.wrapper {
+  margin: 10px;
+}
+
+.wrapper_answers {
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  align-items: center;
+}
+
+.wrapper_description {
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  border: 1px solid white;
+  padding: 2px;
+}
+
+.btn_wrapper {
+  text-align: center;
+  margin: 10px;
+}
+
+@media (min-width: 768px){
+  .width50 {
+    max-width: calc(50% - 10px);
+    flex: 0 0 50%;
+  }
+
+  .wrapper {
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+  }
+  
+}
