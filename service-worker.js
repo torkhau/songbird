@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/songbird/precache-manifest.066261771b9106526c78e7944bc733fc.js"
+  "/songbird/precache-manifest.5c9bdd5980405b4f64471f8fd30af066.js"
 );
 
 self.addEventListener('message', (event) => {
