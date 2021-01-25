@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import classes from './App.module.css';
 import Header from './Blocks/Header/Header';
 import Question from './Blocks/Question/Question';
@@ -21,7 +21,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      score: 0, 
+      score: 0,
       level: 0,
       btnDisabled: true,
       loading: true,
@@ -43,47 +43,48 @@ class App extends Component {
 
   getData = async (level) => {
     fetch(`https://songbirds-1cb24.firebaseio.com/${menuItems[level][1]}.json`)
-    .then(response => response.json())
-    .then(data => this.createQuestion(data))
-    .catch(err => console.log(err))
+      .then(response => response.json())
+      .then(data => this.createQuestion(data))
+      .catch(err => console.log(err))
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.getData(this.state.level)
   }
-  
-  nextLevelClickHandler = () => {
+
+   nextLevelClickHandler = async () => {
     this.maxPoints = 5;
     this.arrPoints = [1, 1, 1, 1, 1, 1];
     this.getData(this.state.level + 1);
     this.setState(preState => ({
-      level: preState.level + 1, 
+      level: preState.level + 1,
       btnDisabled: true,
       win: false,
       indexAnswer: -1,
-      labels: [0, 0, 0, 0, 0, 0]
+      labels: [0, 0, 0, 0, 0, 0],
+      loading: true
     }));
   };
 
   renderDescription = (indexAnswer) => {
-    return <Description data = {this.data[indexAnswer]}/>
+    return <Description data={this.data[indexAnswer]} />
   }
 
   onClickAnswer = (index, type) => {
     this.setState({ indexAnswer: index });
     if (this.state.win) return;
     if (this.trueAnswer === index) {
-      this.setState( preState => ({
-          score: preState.score + this.maxPoints,
-          btnDisabled: false,
-          win: true,
-          labels: preState.labels.map((item, i) => index === i ? type : item)
-        })
+      this.setState(preState => ({
+        score: preState.score + this.maxPoints,
+        btnDisabled: false,
+        win: true,
+        labels: preState.labels.map((item, i) => index === i ? type : item)
+      })
       )
     } else {
       this.maxPoints -= this.arrPoints[index];
       this.arrPoints[index] = 0;
-      this.setState( preState => ({
+      this.setState(preState => ({
         labels: preState.labels.map((item, i) => index === i ? type : item)
       })
       )
@@ -91,40 +92,41 @@ class App extends Component {
   }
 
   render() {
-    const { loading } = this.state;
-    if (loading) {
-      return (
-      <div className = {classes.loader}>
-        <Loader />
-      </div>
-      )
-    } else {
-      const { win, level, score, indexAnswer, btnDisabled,  labels} = this.state;
-      return (
-        <div className = {classes.App}>
-          <Header score = {score} level = {level} menu = {menuItems}/>
-          <div className = {classes.Body}>
-            <div className = {classes.section}>
-              <Question data = {this.data[this.trueAnswer]} win = {win} hidden = {true} hash = 'que' />
-            </div>
-            <div className = {classes.section}>
-              <div className = {classes.wrapper}>
-                <div className = {`${classes.wrapper_answers} ${classes.width50}`}>
-                  <Answers data = {this.data} trueAnswer = {this.trueAnswer} onClick = {this.onClickAnswer} labels = {labels} />
-                </div>
-                <div className = {`${classes.wrapper_description} ${classes.width50}`}>
-                  { indexAnswer === -1 ? 'Послушайте плеер и выберите птицу из списка.' : this.renderDescription(indexAnswer) }
-                </div>
+    const { win, level, score, indexAnswer, btnDisabled, labels, loading } = this.state;
+    return (
+      <div className={classes.App}>
+        <Header score={score} level={level} menu={menuItems} />
+        <div className={classes.Body}>
+          <div className={`${classes.section} ${loading ? classes.Loader : ''}`}>
+            {loading ?
+              <Loader /> :
+              <Question data={this.data[this.trueAnswer]} win={win} hidden={true} hash='que' />
+            }
+          </div>
+          <div className={classes.section}>
+            <div className={classes.wrapper}>
+              <div className={`${classes.wrapper_answers} ${classes.width50} ${loading ? classes.Loader : ''}`}>
+                {loading ?
+                  <Loader /> :
+                  <Answers data={this.data} trueAnswer={this.trueAnswer} onClick={this.onClickAnswer} labels={labels} />
+                }
+              </div>
+              <div className={`${classes.wrapper_description} ${classes.width50} ${loading ? classes.Loader : ''}`}>
+                {indexAnswer === -1 ?
+                  'Паслухайце плэер і абярыце птушку' :
+                  loading ?
+                    <Loader /> :
+                    this.renderDescription(indexAnswer)}
               </div>
             </div>
-            <div className = {classes.btn_wrapper}>
-              <Button onClick = {this.nextLevelClickHandler} btnDisabled = {btnDisabled}/>
-            </div>
           </div>
-          <Footer />
+          <div className={classes.btn_wrapper}>
+            <Button onClick={this.nextLevelClickHandler} btnDisabled={btnDisabled} />
+          </div>
+        </div>
+        <Footer />
       </div>
-      );
-    }
+    );
   }
 }
 

@@ -9,19 +9,19 @@ const Question = props => {
   const nameBird = props.win ? props.data.Name : '?????????????????';
   const nameLat = !props.hidden ? props.data.NameLat : '';
   return (
-    <div className = {classes.Question}>
+    <div className={classes.Question}>
       <div>
-        <Img src = {srcImg}/>
+        <Img src={srcImg} />
       </div>
-      <div className = {classes.block_discription}>
+      <div className={classes.block_discription}>
         <p>{nameBird}</p>
-        <hr hidden = {!props.hidden}/>
-        <div hidden = {props.hidden}>
-          <hr/>
+        <hr hidden={!props.hidden} />
+        <div hidden={props.hidden}>
+          <hr />
           <p>{nameLat}</p>
-          <hr/>
+          <hr />
         </div>
-        <Audio song = {props.data.song} hash = {props.hash}/>
+        <Audio song={props.data.song} hash={props.hash} win={props.win} />
       </div>
     </div>
   )

@@ -9,12 +9,8 @@
   color: white;
 }
 
-.loader {
-  background-color: rgba(95, 77, 77, 0.8);
-  border-radius: 5px;
-  margin: 50 auto;
+.Loader {
   display: flex;
-  align-content: center;
   justify-content: center;
 }
 
@@ -24,6 +20,7 @@
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  /* height: 320px; */
 }
 
 .section {

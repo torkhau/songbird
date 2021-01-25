@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import classes from "./Audio.module.css"
 
 class Audio extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       isTogglePlay: true,
@@ -10,7 +10,6 @@ class Audio extends Component {
       currentTime: 0,
       duration: 0,
     };
-    this.won = false;
     this.id_audio = `audio_${props.hash}`;
     this.id_btn = `btn_play_${props.hash}`;
   }
@@ -29,34 +28,28 @@ class Audio extends Component {
     this.audio.removeEventListener('timeupdate', this.onTimeUpdate)
   }
 
-  // componentWillUpdate() {
-  //   if (this.won) {
-  //     if (this.props.win) {
-  //       this.audio.stop();
-  //       this.won = true;
-  //       this.setState({
-  //         isTogglePlay: true,
-  //         positionPlayhead: 0,
-  //         currentTime: 0,
-  //         duration: 0
-  //       })
-  //     }
-  //   }
-  // }
-
-  onClick = () => {
-    let isTogglePlay;
-    if (this.state.isTogglePlay) {
-      this.audio.play();
-      isTogglePlay = false;
-    } else {
+  componentWillUpdate(prevProps) {
+    if (this.props.win !== prevProps.win) {
       this.audio.pause();
-      isTogglePlay = true;
+      this.setState({
+        isTogglePlay: true,
+        positionPlayhead: 0,
+        currentTime: 0,
+        duration: 0
+      })
     }
-    this.setState({ isTogglePlay });
   }
 
-  onCanPlayThrought = () => this.setState({ duration: this.audio.duration});
+  onClick = () => {
+    if (this.state.isTogglePlay) {
+      this.audio.play();
+    } else {
+      this.audio.pause();
+    }
+    this.setState({ isTogglePlay: !this.state.isTogglePlay });
+  }
+
+  onCanPlayThrought = () => this.setState({ duration: this.audio.duration });
 
   onTimeUpdate = () => {
     this.setState(preState => {
@@ -87,33 +80,34 @@ class Audio extends Component {
   }
 
   render() {
-    
+
     return (
-      <div className = {classes.Audio}>
-        <audio 
-        id = {this.id_audio} 
-        hidden
-        src = {this.props.song}
-        onClick = {this.onClick}
-        controls
+      <div className={classes.Audio}>
+        <audio
+          id={this.id_audio}
+          hidden
+          src={this.props.song}
+          onClick={this.onClick}
+          controls
         />
-        <div className = {classes.audio_wrapper}>
-          <div id = {this.id_btn} className = {classes.btn_play}>
-            <span className = {this.state.isTogglePlay ? classes.icon_play3 : classes.icon_pause2}></span>
+        <div className={classes.audio_wrapper}>
+          <div id={this.id_btn} className={classes.btn_play}>
+            <span className={this.state.isTogglePlay ? classes.icon_play3 : classes.icon_pause2}></span>
           </div>
-          <div className = {classes.timeline_wrapper}>
-            <div className = {classes.timeline}  
-                  style = {{ background: `linear-gradient(to right,
+          <div className={classes.timeline_wrapper}>
+            <div className={classes.timeline}
+              style={{
+                background: `linear-gradient(to right,
                     red 0%, 
                     red ${this.state.positionPlayhead}%,
                     rgb(255, 115, 115) ${this.state.positionPlayhead}%,
                     rgb(255, 115, 115) 100%)` }}
-                  >
-              <div className = {classes.playhead} 
-                  style = {{ marginLeft: `calc(${this.state.positionPlayhead}% - 4.5px)` }}>
+            >
+              <div className={classes.playhead}
+                style={{ marginLeft: `calc(${this.state.positionPlayhead}% - 4.5px)` }}>
               </div>
             </div>
-            <div className = {classes.indicator}> 
+            <div className={classes.indicator}>
               <span>{this.timeFormatter(this.state.currentTime)}</span>
               <span>{this.timeFormatter(this.state.duration)}</span>
             </div>
