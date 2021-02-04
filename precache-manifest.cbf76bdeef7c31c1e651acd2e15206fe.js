@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c310ae2771037a5489363e8924fa6668",
+    "revision": "46d77561bb0e62ddd6169c29bdcc4154",
     "url": "/songbird/index.html"
   },
   {
-    "revision": "50061a14e2cee1acbab6",
-    "url": "/songbird/static/css/main.656abe5e.chunk.css"
+    "revision": "b6897067b746d69b4738",
+    "url": "/songbird/static/css/main.4fa697ae.chunk.css"
   },
   {
-    "revision": "5d03d2dfa6bb89e23777",
-    "url": "/songbird/static/js/2.490980b7.chunk.js"
+    "revision": "b768d02efd6c2780aa97",
+    "url": "/songbird/static/js/2.a975483c.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/songbird/static/js/2.490980b7.chunk.js.LICENSE.txt"
+    "url": "/songbird/static/js/2.a975483c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "50061a14e2cee1acbab6",
-    "url": "/songbird/static/js/main.e2f3f26f.chunk.js"
+    "revision": "b6897067b746d69b4738",
+    "url": "/songbird/static/js/main.5f15d596.chunk.js"
   },
   {
     "revision": "41fc37381d3a97757444",
     "url": "/songbird/static/js/runtime-main.710c5ffc.js"
+  },
+  {
+    "revision": "205a82bd6414bb7df8c9630d2f3358a7",
+    "url": "/songbird/static/media/Background.205a82bd.jpg"
   },
   {
     "revision": "06a469380cb09a64d372f773665e7500",
